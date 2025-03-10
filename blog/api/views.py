@@ -6,7 +6,8 @@ from blog.api.serializers import PostSerializer, UserSerializer, PostDetailSeria
 from blog.models import Post
 
 class UserDetail(generics.RetrieveAPIView):
-    lookup_field = "email"
+    authentication_classes = [SessionAuthentication]
+    lookup_field = "username"
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
