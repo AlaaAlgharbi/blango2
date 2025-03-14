@@ -13,6 +13,7 @@ class TagViewSet(viewsets.ModelViewSet):
     @action(methods=["get"], detail=True, name="Posts with the Tag")
     def posts(self, request, pk=None):
         tag = self.get_object()
+        print(tag)
         post_serializer = PostSerializer(
             tag.posts, many=True, context={"request": request}
         )
