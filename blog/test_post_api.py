@@ -12,11 +12,11 @@ from blog.models import Post
 class PostApiTestCase(TestCase):
     def setUp(self):
         self.u1 = get_user_model().objects.create_user(
-            email="test@example.com", password="password"
+            username="test@example.com",email="test@example.com", password="password"
         )
 
         self.u2 = get_user_model().objects.create_user(
-            email="test2@example.com", password="password2"
+            username="test2@example.com",email="test2@example.com", password="password2"
         )
 
         posts = [
