@@ -105,7 +105,7 @@ class PostViewSet(viewsets.ModelViewSet):
         if request.user.is_anonymous:
             raise PermissionDenied("You must be logged in to see which Posts are yours")
         posts = self.get_queryset().filter(author=request.user)
-       
+
         page = self.paginate_queryset(posts)
         if page is not None:
             serializer = PostSerializer(page, many=True, context={"request": request})
