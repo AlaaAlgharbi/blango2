@@ -18,9 +18,11 @@ from django.urls import path,include
 from django.conf.urls.static import static
 from django.conf import settings
 import debug_toolbar
+import blog.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("", blog.views.index),
     path("api/v1/", include("blog.api.urls")),
 ]
 
