@@ -78,6 +78,7 @@ class Dev(Configuration):
         'django.contrib.messages',
         'django.contrib.staticfiles',
         'blog',
+        'blango_auth',
         'debug_toolbar',
         'rest_framework',
         'rest_framework.authtoken',
@@ -103,6 +104,8 @@ class Dev(Configuration):
     ROOT_URLCONF = 'blango.urls'
     CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
     CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+    AUTH_USER_MODEL = "blango_auth.User"
 
     TEMPLATES = [
         {
